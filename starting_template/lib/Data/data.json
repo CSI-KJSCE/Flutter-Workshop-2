@@ -1,0 +1,70 @@
+{
+"Mumbai": {
+  "current_temp": 32,
+  "max_temperature_today": 33,
+  "min_temperature_today": 30,
+  "main_today": "Mild shower",
+  "id": 300,
+  "sunrise": "05:45 hours",
+  "sunset": "19:05 hours",
+  "main_4days": [
+    "Clear",
+    "Raining",
+    "Thunderstorm",
+    "Clear"
+  ],
+  "id_4days": [
+    200,
+    400,
+    800,
+    200
+  ],
+  "max_temperature_4days": [
+    35,
+    28,
+    26,
+    34
+  ],
+  "min_temperature_4days": [
+    33,
+    26,
+    25,
+    33
+  ]
+},
+
+"Delhi":{
+"current_temp": 32,
+"max_temperature_today": 33,
+"min_temperature_today": 30,
+"main_today": "Mild shower",
+"id": 300,
+"sunrise": "05:45 hours",
+"sunset": "19:05 hours",
+"main_4days": [
+  "Clear",
+  "Raining",
+  "Thunderstorm",
+  "Clear"
+],
+"id_4days": [
+  200,
+  400,
+  800,
+  200
+],
+"max_temperature_4days": [
+  35,
+  28,
+  26,
+  34
+],
+"min_temperature_4days": [
+  33,
+  26,
+  25,
+  33
+]
+}
+
+}
