@@ -1,10 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:startingtemplate/Data/currentData.dart';
 import 'package:startingtemplate/networking/networking.dart';
 import 'package:startingtemplate/screens/city_screen.dart';
 import 'package:startingtemplate/widgets/temperature_tile.dart';
 
-TextStyle sunPositioningData = TextStyle(color: Colors.white, fontSize: 15);
+TextStyle sunPositioningData = TextStyle(color: Colors.white, fontSize: 20);
 
 class HomePage extends StatefulWidget {
   @override
@@ -30,28 +31,52 @@ class _HomePageState extends State<HomePage> {
                 mainAxisSize: MainAxisSize.max,
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: <Widget>[
-                  Align(
-                    alignment: Alignment.topRight,
-                    child: Container(
-                      margin: EdgeInsets.all(8),
-                      child: FlatButton(
-                        onPressed: () async {
-                          var typedName = await Navigator.push(
-                            context,
-                            MaterialPageRoute(builder: (context) => CityPage()),
-                          );
-                          setState(() {
-                            if (typedName != null) {
-                              currentData = getCityData(typedName);
-                            }
-                          });
-                        },
-                        child: Icon(
-                          Icons.location_searching,
-                          color: Colors.white,
+                  Row(
+                    children: <Widget>[
+                      Align(
+                        alignment: Alignment.centerLeft,
+                        child: Container(
+                          margin: EdgeInsets.all(8),
+                          child: FlatButton(
+                            onPressed: () {
+                              setState(() {
+                                currentData = getCurrentData();
+                              });
+                            },
+                            child: Icon(
+                              Icons.location_on,
+                              color: Colors.white,
+                            ),
+                          ),
                         ),
                       ),
-                    ),
+                      SizedBox(width: 180.0),
+                      Align(
+                        alignment: Alignment.centerRight,
+                        child: Container(
+                          margin: EdgeInsets.all(8),
+                          child: FlatButton(
+                            onPressed: () async {
+                              var typedName = await Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => CityPage()),
+                              );
+                              setState(() {
+                                if (typedName != null) {
+                                  currentData =
+                                      getCityData(typedName.toLowerCase());
+                                }
+                              });
+                            },
+                            child: Icon(
+                              Icons.location_searching,
+                              color: Colors.white,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
                   Align(
                     alignment: Alignment.topLeft,
@@ -103,14 +128,14 @@ class _HomePageState extends State<HomePage> {
                         child: Column(
                           children: <Widget>[
                             Text(
-                              'sunrise : ${currentData["sunrise"]}',
+                              'Sunrise : ${currentData["sunrise"]}',
                               style: sunPositioningData,
                             ),
                             SizedBox(
                               height: 15,
                             ),
                             Text(
-                              'sunset : ${currentData["sunset"]}',
+                              'Sunset : ${currentData["sunset"]}',
                               style: sunPositioningData,
                             ),
                           ],

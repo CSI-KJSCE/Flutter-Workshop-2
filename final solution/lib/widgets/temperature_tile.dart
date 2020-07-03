@@ -25,6 +25,9 @@ class _DisplayTemperatureState extends State<DisplayTemperature> {
 
   @override
   Widget build(BuildContext context) {
+    setState(() {
+      getData();
+    });
     return Container(
       margin: EdgeInsets.all(16),
       decoration: BoxDecoration(
