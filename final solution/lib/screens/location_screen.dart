@@ -1,11 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:startingtemplate/Data/currentData.dart';
+import 'package:startingtemplate/networking/icons.dart';
 import 'package:startingtemplate/networking/networking.dart';
 import 'package:startingtemplate/screens/city_screen.dart';
 import 'package:startingtemplate/widgets/temperature_tile.dart';
 
-TextStyle sunPositioningData = TextStyle(color: Colors.white, fontSize: 20);
+TextStyle sunPositioningData =
+    TextStyle(color: Colors.white, fontFamily: "SourceSans", fontSize: 15);
 
 class HomePage extends StatefulWidget {
   @override
@@ -24,9 +26,21 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-          backgroundColor: Colors.lightBlueAccent[100],
+          backgroundColor: Colors.lightBlue[100],
           body: SafeArea(
-            child: Center(
+            child: Container(
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  colors: [
+                    Colors.lightBlueAccent[100],
+                    Colors.lightBlue[100],
+                    Colors.lightBlueAccent[100],
+                    Colors.lightBlue[100],
+                  ],
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                ),
+              ),
               child: Column(
                 mainAxisSize: MainAxisSize.max,
                 crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -84,47 +98,26 @@ class _HomePageState extends State<HomePage> {
                       margin: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
                       child: Text(
                         "${currentData["main"]}",
-                        style: TextStyle(fontSize: 50, color: Colors.white),
+                        style: TextStyle(
+                            fontSize: 50,
+                            fontFamily: "SourceSans",
+                            color: Colors.white),
                       ),
                     ),
                   ),
                   Align(
                     alignment: Alignment.centerRight,
                     child: Container(
+                      height: 150,
                       margin:
                           EdgeInsets.symmetric(horizontal: 64, vertical: 16),
-                      child: Icon(
-                        Icons.cloud_queue,
-                        color: Colors.white,
-                        size: 150,
-                      ),
-                    ),
-                  ),
-                  DisplayTemperature(
-                    currentTemperature: currentData["current_temp"],
-                    maxTemperature: currentData["max_temperature"],
-                    minTemperature: currentData["min_temperature"],
-                  ),
-                  Align(
-                    alignment: Alignment.centerLeft,
-                    child: Container(
-                      margin:
-                          EdgeInsets.symmetric(horizontal: 16, vertical: 32),
-                      child: Text(
-                        '${currentData["city"]}',
-                        style: TextStyle(
-                          fontSize: 60,
-                          color: Colors.white,
-                          fontWeight: FontWeight.w600,
-                        ),
-                      ),
+                      child: getImage(currentData["main"]),
                     ),
                   ),
                   Align(
                       alignment: Alignment.bottomRight,
                       child: Container(
-                        margin:
-                            EdgeInsets.symmetric(vertical: 16, horizontal: 32),
+                        margin: EdgeInsets.fromLTRB(16, 40, 32, 8),
                         child: Column(
                           children: <Widget>[
                             Text(
@@ -140,7 +133,27 @@ class _HomePageState extends State<HomePage> {
                             ),
                           ],
                         ),
-                      ))
+                      )),
+                  Align(
+                    alignment: Alignment.centerLeft,
+                    child: Container(
+                      margin: EdgeInsets.fromLTRB(16, 32, 16, 8),
+                      child: Text(
+                        '${currentData["city"]}',
+                        style: TextStyle(
+                          fontSize: 60,
+                          fontFamily: "SourceSans",
+                          color: Colors.white,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                    ),
+                  ),
+                  DisplayTemperature(
+                    currentTemperature: currentData["current_temp"],
+                    maxTemperature: currentData["max_temperature"],
+                    minTemperature: currentData["min_temperature"],
+                  ),
                 ],
               ),
             ),

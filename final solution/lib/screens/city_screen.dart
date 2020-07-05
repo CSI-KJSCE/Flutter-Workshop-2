@@ -15,7 +15,7 @@ class _CityPageState extends State<CityPage> {
         body: SafeArea(
           child: Container(
             color: Colors.lightBlue[100],
-            child: ListView(
+            child: Column(
               children: <Widget>[
                 Align(
                   alignment: Alignment.topLeft,
@@ -61,7 +61,10 @@ class _CityPageState extends State<CityPage> {
                       border: OutlineInputBorder(
                           borderRadius: BorderRadius.all(Radius.circular(20)),
                           borderSide: BorderSide.none),
-                      hintStyle: TextStyle(color: Colors.grey),
+                      hintStyle: TextStyle(
+                        color: Colors.grey,
+                        fontFamily: "SourceSans",
+                      ),
                       hintText: "Enter city name",
                       icon: Icon(
                         Icons.location_city,
@@ -86,6 +89,7 @@ class _CityPageState extends State<CityPage> {
                       'Get Weather',
                       style: TextStyle(
                         fontSize: 20,
+                        fontFamily: "SourceSans",
                         color: Colors.white,
                       ),
                     ),

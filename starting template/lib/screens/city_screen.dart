@@ -9,7 +9,7 @@ class _CityPageState extends State<CityPage> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.red[100],
+      color: Colors.lightBlue[100],
     );
   }
 }

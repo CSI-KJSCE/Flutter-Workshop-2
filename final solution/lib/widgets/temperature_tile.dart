@@ -31,6 +31,14 @@ class _DisplayTemperatureState extends State<DisplayTemperature> {
     return Container(
       margin: EdgeInsets.all(16),
       decoration: BoxDecoration(
+        boxShadow: [
+          BoxShadow(
+            color: Colors.grey[600],
+            blurRadius: 0.5,
+            spreadRadius: 0.5,
+            offset: Offset(0, 2),
+          )
+        ],
         color: Colors.white,
         borderRadius: BorderRadius.circular(20),
       ),
@@ -46,6 +54,7 @@ class _DisplayTemperatureState extends State<DisplayTemperature> {
             '$_currentTemperature',
             style: TextStyle(
               color: Colors.grey,
+              fontFamily: "SourceSans",
               fontSize: 60,
             ),
           ),
@@ -55,6 +64,7 @@ class _DisplayTemperatureState extends State<DisplayTemperature> {
               "o",
               style: TextStyle(
                 color: Colors.grey,
+                fontFamily: "SourceSans",
                 fontSize: 30,
                 fontWeight: FontWeight.w500,
               ),
@@ -69,14 +79,20 @@ class _DisplayTemperatureState extends State<DisplayTemperature> {
               children: <Widget>[
                 Text(
                   'max temperature : $_maxTemperature',
-                  style: TextStyle(color: Colors.grey),
+                  style: TextStyle(
+                    color: Colors.grey,
+                    fontFamily: "SourceSans",
+                  ),
                 ),
                 SizedBox(
                   height: 16,
                 ),
                 Text(
                   'min temperature : $_minTemperature',
-                  style: TextStyle(color: Colors.grey),
+                  style: TextStyle(
+                    color: Colors.grey,
+                    fontFamily: "SourceSans",
+                  ),
                 ),
               ],
             ),
