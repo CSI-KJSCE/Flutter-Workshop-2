@@ -8,5 +8,7 @@ class CurrentData {
     "id": 300,
     "sunrise": "05:50 hours",
     "sunset": "19:05 hours",
+    "url":
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQgGFkdxhud9hocp_AvQp0JfUG57dXPLM10yw&usqp=CAU",
   };
 }
