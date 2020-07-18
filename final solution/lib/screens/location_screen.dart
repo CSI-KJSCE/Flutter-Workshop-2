@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:startingtemplate/Data/currentData.dart';
 import 'package:startingtemplate/networking/icons.dart';
 import 'package:startingtemplate/networking/networking.dart';
 import 'package:startingtemplate/screens/city_screen.dart';
@@ -30,16 +29,6 @@ class _HomePageState extends State<HomePage> {
           body: Container(
         padding: EdgeInsets.only(top: 15),
         decoration: BoxDecoration(
-//                gradient: LinearGradient(
-//                  colors: [
-//                    Colors.lightBlueAccent[100],
-//                    Colors.lightBlue[100],
-//                    Colors.lightBlueAccent[100],
-//                    Colors.lightBlue[100],
-//                  ],
-//                  begin: Alignment.topCenter,
-//                  end: Alignment.bottomCenter,
-//                ),
             image: DecorationImage(
           image: NetworkImage(
             currentData["url"],

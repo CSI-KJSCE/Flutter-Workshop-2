@@ -1,5 +1,5 @@
 class Data {
-  dynamic data = {
+  Map<String, dynamic> data = {
     "mumbai": {
       "city": "Mumbai",
       "current_temp": 29,
