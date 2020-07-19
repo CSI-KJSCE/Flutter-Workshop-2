@@ -1,17 +1,22 @@
-import 'package:startingtemplate/Data/currentData.dart';
-import 'package:startingtemplate/Data/data.dart';
+import 'dart:convert';
+import 'package:http/http.dart';
 
-dynamic getCurrentData() {
-  dynamic data = CurrentData().currentData;
-  print(data);
+String apiKey = "getyourownapikey";
+
+Future<dynamic> getCurrentData({double lat, double long}) async {
+  Response response = await get(
+      "https://api.openweathermap.org/data/2.5/weather?lat=$lat&lon=$long&appid=$apiKey&units=metric");
+  String data = response.body;
   return data;
 }
 
-dynamic getCityData(String cityName) {
-  dynamic data = Data().data[cityName];
-  if (data != null) {
+Future<dynamic> getCityData(String cityName, double long, double lat) async {
+  Response response = await get(
+      "https://api.openweathermap.org/data/2.5/weather?q=$cityName&appid=$apiKey&units=metric");
+  String data = response.body;
+  if (jsonDecode(data)["cod"] == 200) {
     return data;
   } else {
-    return getCurrentData();
+    return getCurrentData(lat: lat, long: long);
   }
 }

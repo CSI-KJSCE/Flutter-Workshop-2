@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class DisplayTemperature extends StatefulWidget {
-  final int currentTemperature, maxTemperature, minTemperature;
+  final currentTemperature, maxTemperature, minTemperature;
   DisplayTemperature(
       {this.currentTemperature, this.maxTemperature, this.minTemperature});
   @override
@@ -10,11 +10,11 @@ class DisplayTemperature extends StatefulWidget {
 }
 
 class _DisplayTemperatureState extends State<DisplayTemperature> {
-  int _currentTemperature, _maxTemperature, _minTemperature;
+  var _currentTemperature, _maxTemperature, _minTemperature;
   void getData() {
-    _currentTemperature = widget.currentTemperature;
-    _maxTemperature = widget.maxTemperature;
-    _minTemperature = widget.minTemperature;
+    _currentTemperature = widget.currentTemperature.round();
+    _maxTemperature = widget.maxTemperature.round();
+    _minTemperature = widget.minTemperature.round();
   }
 
   @override
@@ -47,7 +47,7 @@ class _DisplayTemperatureState extends State<DisplayTemperature> {
         mainAxisSize: MainAxisSize.max,
         children: <Widget>[
           SizedBox(
-            width: 52,
+            width: 35,
             height: 90,
           ),
           Text(
@@ -73,7 +73,8 @@ class _DisplayTemperatureState extends State<DisplayTemperature> {
           SizedBox(
             width: 83,
           ),
-          Container(
+          Align(
+            alignment: Alignment.centerRight,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <Widget>[
