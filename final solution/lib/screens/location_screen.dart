@@ -65,7 +65,7 @@ class _HomePageState extends State<HomePage> {
                   decoration: BoxDecoration(
                       image: DecorationImage(
                     image: NetworkImage(
-                      "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQgGFkdxhud9hocp_AvQp0JfUG57dXPLM10yw&usqp=CAU",
+                      "https://images.wallpaperscraft.com/image/mountains_sky_gradient_132512_938x1668.jpg",
                     ),
                     fit: BoxFit.cover,
                   )),
