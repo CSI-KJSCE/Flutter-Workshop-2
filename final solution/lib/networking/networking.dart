@@ -1,7 +1,8 @@
 import 'dart:convert';
 import 'package:http/http.dart';
 
-String apiKey = "getyourownapikey";
+//TODO: add your own api key
+String apiKey = "";
 
 Future<dynamic> getCurrentData({double lat, double long}) async {
   Response response = await get(

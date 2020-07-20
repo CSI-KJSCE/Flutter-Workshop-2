@@ -2,7 +2,6 @@ import 'dart:convert';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:startingtemplate/Data/currentData.dart';
 import 'package:startingtemplate/networking/icons.dart';
 import 'package:startingtemplate/networking/networking.dart';
 import 'package:startingtemplate/screens/city_screen.dart';
